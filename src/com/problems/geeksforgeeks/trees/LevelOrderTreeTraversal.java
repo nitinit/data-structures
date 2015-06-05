@@ -5,7 +5,7 @@ package com.problems.geeksforgeeks.trees;
  * @author raja 01-Jun-2015
  *
  */
-public class CountLeafNodeOfBinaryTree {
+public class LevelOrderTreeTraversal {
 
 	public static void main(String[] args) {
 		TreeNode root = new TreeNode(10);
