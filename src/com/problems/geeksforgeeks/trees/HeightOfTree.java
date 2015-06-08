@@ -12,7 +12,7 @@ public class HeightOfTree {
 		System.out.println(heightOfTree(tree2));
 	}
 
-	private static int heightOfTree(TreeNode root) {
+	public static int heightOfTree(TreeNode root) {
 		if (root == null) {
 			return 0;
 		}

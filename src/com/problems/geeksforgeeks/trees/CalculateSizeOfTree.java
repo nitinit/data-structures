@@ -15,7 +15,7 @@ public class CalculateSizeOfTree {
 		System.out.println(sizeOfTree(root));
 	}
 
-	private static void calculateSizeOfTree(TreeNode root) {
+	public static void calculateSizeOfTree(TreeNode root) {
 
 		if (root == null) {
 			return;
@@ -27,7 +27,7 @@ public class CalculateSizeOfTree {
 
 	}
 
-	private static int sizeOfTree(TreeNode root) {
+	public static int sizeOfTree(TreeNode root) {
 		if (root == null) {
 			return 0;
 		}
