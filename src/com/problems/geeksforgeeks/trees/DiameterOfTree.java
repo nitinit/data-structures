@@ -22,6 +22,7 @@ public class DiameterOfTree {
 		tree1.left.right = new TreeNode(2);
 
 		System.out.println(diameter(tree1));
+		System.out.println(diameterOptimizedApproach(tree1)[0]);
 	}
 
 	public static int diameter(TreeNode root) {
@@ -30,6 +31,23 @@ public class DiameterOfTree {
 		}
 		int diameterOfCurrentNode = HeightOfTree.heightOfTree(root.left) + HeightOfTree.heightOfTree(root.right) + 1;
 		return Math.max(diameterOfCurrentNode, Math.max(diameter(root.left), diameter(root.right)));
+
+	}
+	
+	
+	public static int[] diameterOptimizedApproach(TreeNode root) {
+		int []arr = new int[]{0,0};//1st element: diameter, 2nd: height 
+		if (root == null) {
+			return arr;
+		}
+		int[] leftArr = diameterOptimizedApproach(root.left);
+		int[] rightArr = diameterOptimizedApproach(root.right);
+		
+		int diameter = leftArr[1] + rightArr[1]+ 1;
+		arr[0] = Math.max(diameter, Math.max(leftArr[0], leftArr[0]));
+		int height = Math.max(leftArr[1], rightArr[1]) + 1;
+		arr[1]=height;
+		return arr;
 
 	}
 
