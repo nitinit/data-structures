@@ -1,4 +1,4 @@
-package com.problems.general;
+package com.problems.geeksforgeeks.arrays;
 
 /**
  * Created by raja on 25/06/15.

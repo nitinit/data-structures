@@ -1,4 +1,4 @@
-package com.problems.general;
+package com.problems.geeksforgeeks.arrays;
 
 public class LargestSumContiguousSubarraykadanesAlgo {
 
