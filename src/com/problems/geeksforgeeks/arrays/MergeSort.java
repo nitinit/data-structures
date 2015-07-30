@@ -4,25 +4,27 @@
 package com.problems.geeksforgeeks.arrays;
 
 /**
+ * http://www.geeksforgeeks.org/counting-inversions/
  * @author Raja Jain
  * 
  */
 public class MergeSort {
 
-	public static void mergeSort(int[] arr, int startIndex, int lastIndex) {
-
+	public static int mergeSort(int[] arr, int startIndex, int lastIndex) {
+		int count=0;
 		if (startIndex < lastIndex) {
 
 			int middleIndex = (startIndex + lastIndex) / 2;
-			mergeSort(arr, startIndex, middleIndex);
-			mergeSort(arr, middleIndex + 1, lastIndex);
-			merge(arr, startIndex, middleIndex, lastIndex);
+			count = mergeSort(arr, startIndex, middleIndex);
+			count += mergeSort(arr, middleIndex + 1, lastIndex);
+			count +=merge(arr, startIndex, middleIndex, lastIndex);
 		}
+		return count;
 	}
 
-	private static void merge(int[] arr, int startIndex, int middleIndex,
+	private static int merge(int[] arr, int startIndex, int middleIndex,
 			int lastIndex) {
-
+		int count=0;
 		int leftArrSize = middleIndex - startIndex + 1;
 		int rightArrSize = lastIndex - middleIndex;
 		int[] left = new int[leftArrSize+1];
@@ -46,31 +48,28 @@ public class MergeSort {
 			} else {
 				arr[k] = right[j];
 				j++;
+				count =count + leftArrSize - i;
 			}
 		}
+		return count;
 	}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int[] arr = new int[10];
+		int[] arr = new int[5];
 
-		arr[0] = 1;
-		arr[1] = 2;
-		arr[2] = 2;
+		arr[0] = 2;
+		arr[1] = 4;
+		arr[2] = 1;
 		arr[3] = 3;
-		arr[4] = 8;
-		arr[5] = 45;
-		arr[6] = 7;
-		arr[7] = 9;
-		arr[8] = 40;
-		arr[9] = 10;
-		mergeSort(arr, 0, 9);
+		arr[4] = 5;
+		System.out.println(mergeSort(arr, 0, 4));
 
-		for (int i = 0; i < arr.length; i++) {
-			System.out.println(arr[i]);
-		}
+//		for (int i = 0; i < arr.length; i++) {
+//			System.out.println(arr[i]);
+//		}
 	}
 
 }
