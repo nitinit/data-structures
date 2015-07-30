@@ -23,7 +23,7 @@ class PrintRun implements Runnable {
 
 	public PrintRun(Object obj) {
 		this.obj = obj;
-		bool = new AtomicBoolean(false);
+		bool = new AtomicBoolean(true);
 	}
 
 	@Override
@@ -34,14 +34,22 @@ class PrintRun implements Runnable {
 
 				synchronized (obj) {
 					System.out.print("RAJA");
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 					bool.set(false);
-
 				}
 			} else {
 				synchronized (obj) {
 					System.out.println("JAIN\n");
 					bool.set(true);
-
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 				}
 			}
 

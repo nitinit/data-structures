@@ -17,14 +17,21 @@ public class DeleteNodeIfGreaterThanPreviousInLinkedList {
         ll.next.next.next.next = new TreeNode(20);
         ll.next.next.next.next.next = new TreeNode(16);
         ll.next.next.next.next.next.next = new TreeNode(2);
+        TreeNode head = ll;
 
+//        TreeNode result =  delete(ll);
+//        while(ll!=null){
+//            System.out.print(ll.value + " ");
+//            ll=ll.next;
+//        }
+//        System.out.println();
+//
+//        while(result!=null){
+//            System.out.print(result.value + " ");
+//            result=result.next;
+//        }
 
-        TreeNode result =  delete(ll);
-        while(ll!=null){
-            System.out.print(ll.value + " ");
-            ll=ll.next;
-        }
-        System.out.println();
+        TreeNode result =  deleteLesserNodes(head);
 
         while(result!=null){
             System.out.print(result.value + " ");
@@ -46,6 +53,19 @@ public class DeleteNodeIfGreaterThanPreviousInLinkedList {
             return result;
         }
         return node;
+    }
+
+    public static TreeNode  deleteLesserNodes(TreeNode node) {
+        if (node == null) return null;
+
+        TreeNode next = deleteLesserNodes(node.next);
+        node.next = next;
+
+        if (next != null && node.value < next.value) {
+            return next;
+        } else {
+            return node;
+        }
     }
 
 }

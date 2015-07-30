@@ -16,7 +16,7 @@ public class TreeTraversal {
 		postOrderTraversal(root);
 	}
 
-	private static void inorderTraversal(TreeNode root) {
+	public static void inorderTraversal(TreeNode root) {
 		if(root==null){
 			return;
 		}
@@ -25,7 +25,7 @@ public class TreeTraversal {
 		inorderTraversal(root.right);
 	}
 	
-	private static void preorderTraversal(TreeNode root) {
+	public static void preorderTraversal(TreeNode root) {
 		if(root==null){
 			return;
 		}
@@ -33,8 +33,8 @@ public class TreeTraversal {
 		preorderTraversal(root.left);
 		preorderTraversal(root.right);
 	}
-	
-	private static void postOrderTraversal(TreeNode root) {
+
+	public static void postOrderTraversal(TreeNode root) {
 		if(root==null){
 			return;
 		}

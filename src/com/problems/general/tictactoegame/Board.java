@@ -108,22 +108,25 @@ public class Board {
 
                 if (depth == 0) System.out.println("Score for position " + (i + 1) + " = " + currentScore);
                 if (currentScore >= 0) {
-                    if (depth == 0) computersMove = point;
+                    if (depth == 0) {
+                        computersMove = point;
+                    }
                 }
                 if (currentScore == 1) {
                     board[point.x][point.y] = 0;
                     break;
                 }
-                if (i == pointsAvailable.size() - 1 && max < 0) {
-                    if (depth == 0) {
-                        computersMove = point;
-                    }
-                }
+//                if (i == pointsAvailable.size() - 1 && max < 0) {
+//                    if (depth == 0) {
+//                        computersMove = point;
+//                    }
+//                }
             } else if (turn == 2) {
                 placeAMove(point, 2);
                 int currentScore = miniMax(depth + 1, 1);
                 min = Math.min(currentScore, min);
                 if (min == -1) {
+//                if (currentScore == -1) {
                     board[point.x][point.y] = 0;
                     break;
                 }
