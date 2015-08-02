@@ -11,7 +11,7 @@ import java.util.Map;
 public class LengthOfLongestSubstring {
 
 	public static void main(String[] args) {
-		System.out.println(lengthOfLongestSubstring("abecbegeh"));
+		System.out.println(lengthOfLongestSubstring("cdd"));
 	}
 
 
@@ -31,7 +31,8 @@ public class LengthOfLongestSubstring {
 		for (int j = 1; j < s.length(); j++) {
 			prevIndex = visited[s.charAt(j)];
 
-			if (prevIndex == -1 || j - currentLen > prevIndex) {
+//			if (prevIndex == -1 || j - currentLen > prevIndex) {
+			if (prevIndex == -1 || j -  prevIndex > currentLen) {
 				currentLen++;
 			} else {
 				if (currentLen > max) {

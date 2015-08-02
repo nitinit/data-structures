@@ -48,8 +48,9 @@ public class MedianSortedArrays {
 			}
 			return sol / n;
 		}
-		if (n > m)
+		if (n > m){
 			return findMedianSortedArrays(nums2, m, nums1, n);
+		}
 
 		return findMedianSortedArrays(nums1, n, nums2, m);
 	}

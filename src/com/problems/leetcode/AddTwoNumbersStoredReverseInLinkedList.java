@@ -14,7 +14,7 @@ public class AddTwoNumbersStoredReverseInLinkedList {
 		l2.next.next = new ListNode(8);
 		l2.next.next.next = new ListNode(6);
 		
-		ListNode result = addLists(l1, l2);
+		ListNode result = addTwoNumbers(l1, l2);
 		ListNode c = null;
 		if(result.carry!=0){
 		 c = new ListNode(result.carry);
@@ -30,18 +30,18 @@ public class AddTwoNumbersStoredReverseInLinkedList {
 	}
 
 	@SuppressWarnings("unused")
-	public static ListNode addLists(ListNode l1Header, ListNode l2Header) {
+	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		ListNode sol = null;
-		if (l1Header.next != null || l2Header.next != null) {
-			sol = addLists( l1Header.next, l2Header.next);
+		if (l1.next != null || l2.next != null) {
+			sol = addTwoNumbers(l1.next, l2.next);
 		}
 
 		ListNode header = new ListNode(0);
 		
-		header.val = ((l1Header == null ? 0 : l1Header.val)
-				+ (l2Header == null ? 0 : l2Header.val) + (sol==null ? 0 : sol.carry)) % 10;
-		int carry = ((l1Header == null ? 0 : l1Header.val)
-				+ (l2Header == null ? 0 : l2Header.val) + (sol==null ? 0 : sol.carry)) / 10;
+		header.val = ((l1 == null ? 0 : l1.val)
+				+ (l2 == null ? 0 : l2.val) + (sol==null ? 0 : sol.carry)) % 10;
+		int carry = ((l1 == null ? 0 : l1.val)
+				+ (l2 == null ? 0 : l2.val) + (sol==null ? 0 : sol.carry)) / 10;
 		header.next = sol;
 		header.carry=carry;
 		return header;
