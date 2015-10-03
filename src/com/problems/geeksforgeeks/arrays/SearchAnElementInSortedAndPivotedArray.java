@@ -6,11 +6,12 @@ package com.problems.geeksforgeeks.arrays;
 public class SearchAnElementInSortedAndPivotedArray {
 
 
-    public static void main(String[] args){
-        int arr1[] = {5, 6, 7, 8, 9, 10, 1, 2, 3 ,4};
+    public static void main(String[] args) {
+        int arr1[] = {5,5, 6, 7, 8, 9, 9, 9, 9, 10, 10, 10,10,10,10, 1, 1, 1, 1, 2, 3, 4,5,5};
+        int arr3[] = {8, 9, 10, 1, 2, 3, 4, 5, 6};
         int arr_size = arr1.length;
         int no = 3;
-        System.out.println(findPivot(arr1, 0, 8));
+        System.out.println(findPivot(arr1, 0, arr1.length));
 
         int arr2[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 1};
 

@@ -34,16 +34,16 @@ class PrintRun implements Runnable {
 
 				synchronized (obj) {
 					System.out.print("RAJA");
-					try {
+				bool.set(false);
+				try {
 						Thread.sleep(1000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					bool.set(false);
 				}
 			} else {
 				synchronized (obj) {
-					System.out.println("JAIN\n");
+					System.out.println("JAIN");
 					bool.set(true);
 					try {
 						Thread.sleep(1000);

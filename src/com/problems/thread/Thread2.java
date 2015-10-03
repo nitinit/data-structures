@@ -12,6 +12,9 @@ public class Thread2 extends Thread{
     }
     @Override
     public void run() {
+
+        Thread1 t1 = new Thread1();
+        t1.print();
         obj.print2();
     }
 }

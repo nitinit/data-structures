@@ -5,10 +5,29 @@ package com.problems.leetcode;
  */
 public class CheckNumberPalindrome {
 
-    public static void main(String[] args) {
-        System.out.println(isPalindrome(-13333331));
+
+    public String s;
+
+    public CheckNumberPalindrome(){
+
     }
 
+    public static void main(String[] args) {
+        System.out.println(isPalindrome(-13333331));
+        System.out.println(isPalindrome("isPalindrome"));
+//        CheckNumberPalindrome  a =  new CheckNumberPalindrome().f;
+
+    }
+
+
+    public static class f{
+        f(){
+
+        }
+
+        static void print(){
+        }
+    }
     public static boolean isPalindrome(int x) {
         if(x<0){
             x= -1 * x;
@@ -26,4 +45,16 @@ public class CheckNumberPalindrome {
         return false;
 
     }
+
+    static boolean isPalindrome(String args) {
+        if(args.length() == 0 || args.length() == 1)
+            return true;
+
+        args= args.toUpperCase().trim();
+        if(args.charAt(0) == args.charAt(args.length()-1))
+            return isPalindrome(args.substring(1, args.length()-1));
+        return false;
+
+    }
+
 }
