@@ -5,7 +5,7 @@ import java.io.OutputStream;
 import java.util.Map;
 import java.util.concurrent.ConcurrentMap;
 
-import com.interview.questions.bsb.Time;
+import com.interview.questions.bsb.handlers.Time;
 
 
 public class Response {

@@ -5,10 +5,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
-import com.interview.questions.bsb.KillHandler;
-import com.interview.questions.bsb.RequestHandler;
-import com.interview.questions.bsb.ServerStatus;
-import com.interview.questions.bsb.SleepHandler;
+import com.interview.questions.bsb.handlers.KillHandler;
+import com.interview.questions.bsb.handlers.RequestHandler;
+import com.interview.questions.bsb.handlers.ServerStatus;
+import com.interview.questions.bsb.handlers.SleepHandler;
 
 
 public class Worker implements Runnable {

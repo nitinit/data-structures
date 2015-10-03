@@ -1,4 +1,4 @@
-package com.interview.questions.bsb;
+package com.interview.questions.bsb.handlers;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

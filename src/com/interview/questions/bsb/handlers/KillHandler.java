@@ -1,4 +1,4 @@
-package com.interview.questions.bsb;
+package com.interview.questions.bsb.handlers;
 
 import com.interview.questions.bsb.server.Request;
 import com.interview.questions.bsb.server.Response;

@@ -1,4 +1,4 @@
-package com.interview.questions.bsb;
+package com.interview.questions.bsb.handlers;
 
 public class Time {
 
