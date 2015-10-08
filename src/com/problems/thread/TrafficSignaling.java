@@ -1,11 +1,8 @@
-package com.problems.general;
+package com.problems.thread;
 
 public class TrafficSignaling {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Object o1 = new Object();
 		Object o2 = new Object();
 		Object o3 = new Object();
@@ -19,6 +16,7 @@ public class TrafficSignaling {
 		new Thread(t2, "T2").start();
 		new Thread(t3, "T3").start();
 		new Thread(t4, "T4").start();
+		Thread.sleep(2000);// making sure , notify is called after execution of wait.
 		synchronized (o1) {
 			o1.notify();
 		}
@@ -39,13 +37,10 @@ public class TrafficSignaling {
 			while (true) {
 				synchronized (o1) {
 					try {
-						if (Thread.currentThread().isInterrupted()) {
-							return;
-						}
 						o1.wait();
 
 						System.out.println(Thread.currentThread().getName() + "---" + trafficLightNumber++);
-						Thread.currentThread().sleep(1000);
+						Thread.currentThread().sleep(100);
 
 					} catch (InterruptedException e) {
 						e.printStackTrace();
