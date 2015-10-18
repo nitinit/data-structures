@@ -9,6 +9,7 @@ public class TreeNode {
 	public TreeNode previous;
 	public int height;
 	public TreeNode down;
+	public boolean deleted;
 
 	public TreeNode(int value) {
 		this.value = value;

@@ -44,7 +44,7 @@ public class DiameterOfTree {
 		int[] rightArr = diameterOptimizedApproach(root.right);
 		
 		int diameter = leftArr[1] + rightArr[1]+ 1;
-		arr[0] = Math.max(diameter, Math.max(leftArr[0], leftArr[0]));
+		arr[0] = Math.max(diameter, Math.max(leftArr[0], rightArr[0]));
 		int height = Math.max(leftArr[1], rightArr[1]) + 1;
 		arr[1]=height;
 		return arr;

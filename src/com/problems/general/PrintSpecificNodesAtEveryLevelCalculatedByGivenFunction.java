@@ -74,26 +74,8 @@ public class PrintSpecificNodesAtEveryLevelCalculatedByGivenFunction {
         int currentLevel = 1;
         while (!q1.isEmpty() || !q2.isEmpty()) {
 
-            if (currentLevel == level) {
-                if (q1.size() >= n) {
-                    for (int i = 1; i < n; i++) {
-                        q1.remove();
-                    }
-                    TreeNode node = q1.remove();
-                    System.out.println("deleted : " + node.value);
-                    node.deleted = true;
-                    return;
-                } else {
-                    int nodeNumberToBeDeleted = q1.size() % n;
-                    for (int i = 1; i < nodeNumberToBeDeleted; i++) {
-                        q1.remove();
-                    }
-                    TreeNode node = q1.remove();
-                    System.out.println("deleted : " + node.value);
-                    node.deleted = true;
-                    return;
-                }
-            }
+            if (deleteNode(level, n, q1, currentLevel)) return;
+
             while (!q1.isEmpty()) {
                 TreeNode node = q1.remove();
                 if (node.left != null) {
@@ -104,26 +86,7 @@ public class PrintSpecificNodesAtEveryLevelCalculatedByGivenFunction {
                 }
             }
             currentLevel++;
-            if (currentLevel == level) {
-                if (q2.size() >= n) {
-                    for (int i = 1; i < n; i++) {
-                        q2.remove();
-                    }
-                    TreeNode node = q2.remove();
-                    System.out.println("deleted : " + node.value);
-                    node.deleted = true;
-                    return;
-                } else {
-                    int nodeNumberToBeDeleted = q2.size() % n;
-                    for (int i = 1; i < nodeNumberToBeDeleted; i++) {
-                        q2.remove();
-                    }
-                    TreeNode node = q2.remove();
-                    System.out.println("deleted : " + node.value);
-                    node.deleted = true;
-                    return;
-                }
-            }
+            if (deleteNode(level, n, q2, currentLevel)) return;
             while (!q2.isEmpty()) {
                 TreeNode node = q2.remove();
                 if (node.left != null) {
@@ -137,5 +100,29 @@ public class PrintSpecificNodesAtEveryLevelCalculatedByGivenFunction {
 
         }
 
+    }
+
+    private static boolean deleteNode(int level, int n, Queue<TreeNode> q, int currentLevel) {
+        if (currentLevel == level) {
+            if (q.size() >= n) {
+                for (int i = 1; i < n; i++) {
+                    q.remove();
+                }
+                TreeNode node = q.remove();
+                System.out.println("deleted : " + node.value);
+                node.deleted = true;
+                return true;
+            } else {
+                int nodeNumberToBeDeleted = q.size() % n;
+                for (int i = 1; i < nodeNumberToBeDeleted; i++) {
+                    q.remove();
+                }
+                TreeNode node = q.remove();
+                System.out.println("deleted : " + node.value);
+                node.deleted = true;
+                return true;
+            }
+        }
+        return false;
     }
 }
