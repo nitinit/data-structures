@@ -53,9 +53,16 @@ public class AnagramsTogetherLexicographically {
             treeSet.add(anagrams); // sort the entire output lexicographically
         }
 
-        Iterator iterator = treeSet.iterator();
+        Iterator<List<String>> iterator = treeSet.iterator();
         while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+            List<String> list = iterator.next();
+            for (int i = 0; i < list.size(); i++) {
+                System.out.print(list.get(i));
+                if (i != (list.size() - 1)) {
+                    System.out.print(",");
+                }
+            }
+            System.out.println();
         }
     }
 
@@ -69,8 +76,9 @@ public class AnagramsTogetherLexicographically {
         List<String> strings = new ArrayList<>();
         String s;
         // you should use in.hasNextLine()
+//        while (in.hasNextLine()) {
         while (!(s = in.nextLine()).trim().equals("")) {
-            strings.add(s);
+            strings.add(in.nextLine());
         }
         printAnagramsTogether(strings.toArray(new String[0]));
     }

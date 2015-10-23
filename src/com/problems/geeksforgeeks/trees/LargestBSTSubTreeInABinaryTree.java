@@ -5,5 +5,5 @@ package com.problems.geeksforgeeks.trees;
  * <p/>
  * Created by raja on 17/10/15.
  */
-public class LargestBSTInABinaruTree {
+public class LargestBSTSubTreeInABinaryTree {
 }
