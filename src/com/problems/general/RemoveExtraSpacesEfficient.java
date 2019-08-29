@@ -1,8 +1,5 @@
 package com.problems.general;
 
-/**
- * Created by raja on 25/10/15.
- */
 public class RemoveExtraSpacesEfficient {
 
     public static void main(String[] args) {
